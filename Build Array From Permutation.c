@@ -1,10 +1,20 @@
-#include <stdlib.h>
+#include <stdio.h>
 
-int* buildArray(int* nums, int numsSize, int* returnSize) {
-    int* ans = (int*)malloc(numsSize * sizeof(int));
-    for (int i = 0; i < numsSize; i++) {
+int main() {
+    int nums[] = {0, 2, 1, 5, 3, 4};
+    int n = sizeof(nums) / sizeof(nums[0]);
+    int ans[n];
+    int i;  // Declare i outside the loop
+
+    for (i = 0; i < n; i++) {
         ans[i] = nums[nums[i]];
     }
-    *returnSize = numsSize;
-    return ans;
+
+    printf("New Array: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", ans[i]);
+    }
+
+    printf("\n");
+    return 0;
 }
